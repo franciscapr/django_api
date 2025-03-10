@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     # Mis apps
     'core',
     'core.user',
+    'core.auth',
 
     # Apps externas
     'rest_framework',

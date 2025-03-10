@@ -8,7 +8,7 @@ class RegisterSerializer(UserSerializer):    # Hereda de UserSerializer
     """Registration serializer for requests and user creation"""
 
     # Making sure the password is a least 8 characters long, and no longer than 128 and caǹt be read by the user
-    password = serializers.CharField(max_length=128, min_lenght=8, write_only=True, requiered=True)
+    password = serializers.CharField(max_length=128, min_length=8, write_only=True, required=True)
 
     class Meta:
         model = User
