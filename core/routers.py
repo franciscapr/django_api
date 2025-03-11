@@ -13,9 +13,10 @@ router.register(r'auth/refresh', RefreshViewSet, basename='auth-refresh')
 ########## USER ##########
 
 router.register(r'user', UserViewSet, basename='user')
-urlpatterns = [
-    *router.urls,
-]
 
 ######### POST ###########
 router.register(r'post', PostViewSet, basename='post')
+
+urlpatterns = [
+    *router.urls,
+]

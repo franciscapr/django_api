@@ -8,7 +8,7 @@ from rest_framework import status
 
 class PostViewSet(AbstractViewSet):
     http_method_names = ('post', 'get')
-    permission_classes = (IsAuthenticated)
+    permission_classes = [IsAuthenticated]
     serializer_class = PostSerializer
 
     def get_queryset(self):
@@ -22,6 +22,6 @@ class PostViewSet(AbstractViewSet):
     
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
-        serializer.is_valid(raise_expeption=True)
+        serializer.is_valid(raise_exception=True)
         self.perform_create(serializer)
         return Response(serializer.data, status=status.HTTP_201_CREATED)
