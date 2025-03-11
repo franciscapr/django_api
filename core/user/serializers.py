@@ -4,11 +4,6 @@ from core.abstract.serializer import AbstractSerializer
 
 
 class UserSerializer(AbstractSerializer):
-    id = serializers.UUIDField(source='public_id', read_only=True, format='hex')
-    created = serializers.DateTimeField(read_only=True)
-    updated = serializers.DateTimeField(read_only=True)
-
-
     class Meta:
         model = User
         fields = ['id', 'username', 'first_name', 'last_name', 'bio', 'avatar', 'email', 
