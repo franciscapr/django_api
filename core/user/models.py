@@ -59,6 +59,12 @@ class User(AbstractModel, AbstractBaseUser, PermissionsMixin):
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
 
+    posts_liked = models.ManyToManyField(
+        "core_post.Post",
+        related_name="liked_by"
+    )
+
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
