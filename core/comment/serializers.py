@@ -33,6 +33,7 @@ class CommentSerializer(AbstractSerializer):
         instance = super().update(instance, validated_data)
         return instance
 
+    # Modifica el objeto final al agregar informaciòn sobre el autor.
     def to_representation(self, instance):
         rep= super().to_representation(instance)
         author = User.objects.get_object_by_public_id(rep['author'])
