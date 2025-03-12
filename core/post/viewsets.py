@@ -36,7 +36,7 @@ class PostViewSet(AbstractViewSet):
         serializer = self.serializer_class(post)
         return Response(serializer.data, status=status.HTTP_200_OK)
     
-    @action(methods=['post'], details=True)
+    @action(methods=['post'], detail=True)
     def remove_like(self, request, *args, **kwargs):
         post = self.get_object()
         user = self.request.user
