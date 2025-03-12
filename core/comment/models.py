@@ -7,8 +7,8 @@ class CommentManager(AbstractManager):
 
 
 class Comment(AbstractModel):
-    post = models.ForeignKey("core_post.Post", on_delete=models.PROTECT)
-    author = models.ForeignKey("core_user.User", on_delete=models.PROTECT)
+    post = models.ForeignKey("core_post.Post", on_delete=models.CASCADE)
+    author = models.ForeignKey("core_user.User", on_delete=models.CASCADE)
 
     body = models.TextField()
     edited = models.BooleanField(default=False)
@@ -17,5 +17,4 @@ class Comment(AbstractModel):
 
     def __str__(self):
         return self.author.name
-    
     
